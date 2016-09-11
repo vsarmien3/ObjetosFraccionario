@@ -17,6 +17,10 @@ public class principal extends javax.swing.JFrame {
      */
     public principal() {
         initComponents();
+        txtNumeradorUno.requestFocusInWindow();
+        cmdCalcular.setEnabled(true);
+        cmdMixto.setEnabled(false);
+        cmdLimpiar.setEnabled(true);
     }
 
     /**
@@ -136,18 +140,61 @@ public class principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
-        // TODO add your handling code here:
-        int op, n1, n2, d1, d2;
+
+        int op, n1 = 0, n2 = 0, d1 = 1, d2 = 1, sw = 1;
         Fraccionario f1,f2,f3;
         op = cmbOperacion.getSelectedIndex();
         
-        n1 = Integer.parseInt(txtNumeradorUno.getText());
-        d1 = Integer.parseInt(txtDenominadorUno.getText());
-        n2 = Integer.parseInt(txtNumeradorDos.getText());
-        d2 = Integer.parseInt(txtDenominadorDos.getText());
-        
-        
-        
+        if (txtNumeradorUno.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese el primer numerador", "Error", JOptionPane.ERROR_MESSAGE);
+            txtNumeradorUno.requestFocusInWindow();
+            sw = 0;
+        }else if (txtDenominadorUno.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Ingrese el primer denominador", "Error", JOptionPane.ERROR_MESSAGE);
+            txtDenominadorUno.requestFocusInWindow();
+            sw = 0;
+        }else if (txtNumeradorDos.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Ingrese el segundo numerador", "Error", JOptionPane.ERROR_MESSAGE);
+            txtNumeradorDos.requestFocusInWindow();
+            sw = 0;
+        }else if (txtDenominadorDos.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Ingrese el segundo denominador", "Error", JOptionPane.ERROR_MESSAGE);
+            txtDenominadorDos.requestFocusInWindow();
+            sw = 0;
+        }else{
+            try{
+               n1 = Integer.parseInt(txtNumeradorUno.getText()); 
+            }catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "El primer numerador debe ser un número válido", "Error", JOptionPane.ERROR_MESSAGE);
+                txtNumeradorUno.requestFocusInWindow();
+                txtNumeradorUno.selectAll();
+                sw = 0;
+        }
+            try{
+               d1 = Integer.parseInt(txtDenominadorUno.getText());   
+            }catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "El primer denominador debe ser un número válido", "Error", JOptionPane.ERROR_MESSAGE);
+                txtDenominadorUno.requestFocusInWindow();
+                txtDenominadorUno.selectAll();
+                sw = 0;
+        }
+            try{
+               n2 = Integer.parseInt(txtNumeradorDos.getText()); 
+            }catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "El segundo numerador debe ser un número válido", "Error", JOptionPane.ERROR_MESSAGE);
+                txtNumeradorDos.requestFocusInWindow();
+                txtNumeradorDos.selectAll();
+                sw = 0;
+        }
+            try{
+                d2 = Integer.parseInt(txtDenominadorDos.getText());
+            }catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "El segundo denominador debe ser un número válido", "Error", JOptionPane.ERROR_MESSAGE);
+                txtDenominadorDos.requestFocusInWindow();
+                txtDenominadorDos.selectAll();
+                sw = 0;
+        }        
+  
        try{
         f1 = new Fraccionario(n1,d1);
         f2 = new Fraccionario(n2,d2);
@@ -183,8 +230,11 @@ public class principal extends javax.swing.JFrame {
        
         Helper.mensaje(null, "No puede digitar 0 de denominador","Error",2);
        }
+       cmdCalcular.setEnabled(true);
+       cmdMixto.setEnabled(true);
+       cmdLimpiar.setEnabled(true);
     }//GEN-LAST:event_cmdCalcularActionPerformed
-
+    }
     private void txtNumeradorDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeradorDosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumeradorDosActionPerformed
@@ -201,11 +251,15 @@ public class principal extends javax.swing.JFrame {
         txtDenominadorCuatro.setText("");
         txtEntero.setText("");
         txtNumeradorUno.requestFocusInWindow();
+        cmbOperacion.setSelectedIndex(0);
+        cmdCalcular.setEnabled(true);
+        cmdMixto.setEnabled(false);
+        cmdLimpiar.setEnabled(true);
   
     }//GEN-LAST:event_cmdLimpiarActionPerformed
 
     private void cmdMixtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMixtoActionPerformed
-        // TODO add your handling code here:
+  
         int num4, den4, mixto, n4parcial;
         
         String entero, n4, d4;

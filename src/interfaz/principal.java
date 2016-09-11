@@ -48,12 +48,12 @@ public class principal extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("OPERACIONES CON FRACCIONARIOS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
-        jPanel1.add(txtNumeradorUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 70, 60, -1));
-        jPanel1.add(txtDenominadorUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 110, 60, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
+        jPanel1.add(txtNumeradorUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 60, -1));
+        jPanel1.add(txtDenominadorUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 60, -1));
 
         cmbOperacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Suma", "Resta", "Multiplicación", "División" }));
-        jPanel1.add(cmbOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
+        jPanel1.add(cmbOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 60, 10));
 
         txtNumeradorDos.addActionListener(new java.awt.event.ActionListener() {
@@ -95,11 +95,11 @@ public class principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
         );
 
         pack();
@@ -107,7 +107,7 @@ public class principal extends javax.swing.JFrame {
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
         // TODO add your handling code here:
-        int op, n1, n2, n3, d1, d2, d3;
+        int op, n1, n2, d1, d2;
         Fraccionario f1,f2,f3;
         op = cmbOperacion.getSelectedIndex();
         
@@ -126,25 +126,25 @@ public class principal extends javax.swing.JFrame {
             
             case 0:
                 f3 = f1.suma(f2);
-                txtNumeradorTres.setText(""+f3.getDenominador());
+                txtNumeradorTres.setText(""+f3.getNumerador());
                 txtDenominadorTres.setText(""+f3.getDenominador());
             break; 
             
             case 1: 
                 f3 = f1.resta(f2);
-                txtNumeradorTres.setText(""+f3.getDenominador());
+                txtNumeradorTres.setText(""+f3.getNumerador());
                 txtDenominadorTres.setText(""+f3.getDenominador());
             break;
             
             case 2: 
                 f3 = f1.multiplicacion(f2);
-                txtNumeradorTres.setText(""+f3.getDenominador());
+                txtNumeradorTres.setText(""+f3.getNumerador());
                 txtDenominadorTres.setText(""+f3.getDenominador());
             break;
             
             case 3:
                 f3 = f1.division(f2);
-                txtNumeradorTres.setText(""+f3.getDenominador());
+                txtNumeradorTres.setText(""+f3.getNumerador());
                 txtDenominadorTres.setText(""+f3.getDenominador());
             break;    
         

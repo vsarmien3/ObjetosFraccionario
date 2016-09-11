@@ -35,7 +35,7 @@ public class Fraccionario {
     public Fraccionario suma(Fraccionario f2) throws DenominadorCeroException{
         int num, den;
         Fraccionario f;
-        num = this.numerador * f2.denominador + this.denominador * f2.numerador;
+        num = (this.numerador * f2.denominador) + (this.denominador * f2.numerador);
         den = this.denominador * f2.denominador;
         f = new Fraccionario(num,den);
         return f;
@@ -44,7 +44,7 @@ public class Fraccionario {
     public Fraccionario resta(Fraccionario f2) throws DenominadorCeroException{
         int num, den;
         Fraccionario f;
-        num = this.numerador * f2.denominador - this.denominador * f2.numerador;
+        num = (this.numerador * f2.denominador) - (this.denominador * f2.numerador);
         den = this.denominador * f2.denominador;
         f = new Fraccionario(num,den);
         return f;

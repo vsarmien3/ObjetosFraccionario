@@ -5,6 +5,7 @@
  */
 package interfaz;
 import clases.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author vsarmien3
@@ -42,38 +43,44 @@ public class principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         cmdCalcular = new javax.swing.JButton();
         cmdLimpiar = new javax.swing.JButton();
+        cmdMixto = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        txtNumeradorCuatro = new javax.swing.JTextField();
+        txtDenominadorCuatro = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        txtEntero = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("OPERACIONES CON FRACCIONARIOS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
-        jPanel1.add(txtNumeradorUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 60, -1));
-        jPanel1.add(txtDenominadorUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 60, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
+        jPanel1.add(txtNumeradorUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 60, -1));
+        jPanel1.add(txtDenominadorUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 60, -1));
 
         cmbOperacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Suma", "Resta", "Multiplicación", "División" }));
-        jPanel1.add(cmbOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 60, 10));
+        jPanel1.add(cmbOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 60, 10));
 
         txtNumeradorDos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNumeradorDosActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNumeradorDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 60, -1));
-        jPanel1.add(txtDenominadorDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 60, -1));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 60, 10));
+        jPanel1.add(txtNumeradorDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 60, -1));
+        jPanel1.add(txtDenominadorDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 60, -1));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 60, 10));
 
         txtNumeradorTres.setEditable(false);
-        jPanel1.add(txtNumeradorTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 60, -1));
+        jPanel1.add(txtNumeradorTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 60, -1));
 
         txtDenominadorTres.setEditable(false);
-        jPanel1.add(txtDenominadorTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 60, -1));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 60, 10));
+        jPanel1.add(txtDenominadorTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 60, -1));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 60, 10));
 
         jLabel2.setText("=");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 10, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, -1, -1));
 
         cmdCalcular.setText("Calcular");
         cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -89,13 +96,36 @@ public class principal extends javax.swing.JFrame {
                 cmdLimpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, -1, -1));
+        jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, -1, -1));
+
+        cmdMixto.setText("Número mixto");
+        cmdMixto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdMixtoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdMixto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, -1, -1));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Número mixto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtNumeradorCuatro.setEditable(false);
+        jPanel2.add(txtNumeradorCuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 60, -1));
+
+        txtDenominadorCuatro.setEditable(false);
+        jPanel2.add(txtDenominadorCuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 60, -1));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 60, 10));
+
+        txtEntero.setEditable(false);
+        jPanel2.add(txtEntero, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 30, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 170, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,10 +197,41 @@ public class principal extends javax.swing.JFrame {
         txtDenominadorUno.setText("");
         txtDenominadorDos.setText("");
         txtDenominadorTres.setText("");
+        txtNumeradorCuatro.setText("");
+        txtDenominadorCuatro.setText("");
+        txtEntero.setText("");
         txtNumeradorUno.requestFocusInWindow();
-        
-        
+  
     }//GEN-LAST:event_cmdLimpiarActionPerformed
+
+    private void cmdMixtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMixtoActionPerformed
+        // TODO add your handling code here:
+        int num4, den4, mixto, n4parcial;
+        
+        String entero, n4, d4;
+        
+        num4 = Integer.parseInt(txtNumeradorTres.getText());
+        den4 = Integer.parseInt(txtDenominadorTres.getText());
+        
+        if (num4 < den4){
+            JOptionPane.showMessageDialog(this, "El fraccionario no puede convertirse en un número mixto", "error", JOptionPane.ERROR_MESSAGE);
+                txtNumeradorUno.requestFocusInWindow();
+                txtNumeradorUno.selectAll();
+        }else{
+            mixto = (num4 / den4);
+            n4parcial = (num4 % den4);
+            
+            entero = String.valueOf(mixto);
+            txtEntero.setText(entero);
+            
+            n4 = String.valueOf(n4parcial);
+            txtNumeradorCuatro.setText(n4);
+            
+            d4 = String.valueOf(den4);
+            txtDenominadorCuatro.setText(d4);
+       
+        }
+    }//GEN-LAST:event_cmdMixtoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,15 +272,21 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbOperacion;
     private javax.swing.JButton cmdCalcular;
     private javax.swing.JButton cmdLimpiar;
+    private javax.swing.JButton cmdMixto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JTextField txtDenominadorCuatro;
     private javax.swing.JTextField txtDenominadorDos;
     private javax.swing.JTextField txtDenominadorTres;
     private javax.swing.JTextField txtDenominadorUno;
+    private javax.swing.JTextField txtEntero;
+    private javax.swing.JTextField txtNumeradorCuatro;
     private javax.swing.JTextField txtNumeradorDos;
     private javax.swing.JTextField txtNumeradorTres;
     private javax.swing.JTextField txtNumeradorUno;
